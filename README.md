@@ -10,3 +10,6 @@ Clone the repo and:
 ```bash
 npm install -g json-diff ; cp plancheck /usr/local/bin/ ; chmod +x /usr/local/bin/plancheck
 ```
+
+# Usage
+Using the checker tool is as easy as typing `plancheck <tf-plan>`.
