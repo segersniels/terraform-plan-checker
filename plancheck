@@ -7,8 +7,8 @@ if [ -z "$FILE" ]; then
 fi
 
 # Grab the old and new JSON output from the plan
-OLD=$(terraform show $FILE |grep container_definitions |awk '{print $2}' |sed 's/\\"/"/g' |sed 's/^.\(.*\).$/\1/' |jq '.' > old.json)
-NEW=$(terraform show $FILE |grep container_definitions |awk '{print $4}' |sed 's/\\"/"/g' |sed 's/^.\(.*\).$/\1/' |jq '.' > new.json)
+terraform show $FILE |grep container_definitions |awk '{print $2}' |sed 's/\\"/"/g' |sed 's/^.\(.*\).$/\1/' |jq '.' > old.json
+terraform show $FILE |grep container_definitions |awk '{print $4}' |sed 's/\\"/"/g' |sed 's/^.\(.*\).$/\1/' |jq '.' > new.json
 
 # Calculate the difference between the two JSON files with visual output
 json-diff old.json new.json -C
