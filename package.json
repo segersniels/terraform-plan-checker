@@ -20,6 +20,7 @@
     "plancheck": "plancheck.js"
   },
   "dependencies": {
+    "colors": "^1.1.2",
     "commander": "^2.13.0",
     "lodash": "^4.17.4"
   }

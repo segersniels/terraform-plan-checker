@@ -3,6 +3,7 @@ const fs = require('fs');
 const _ = require('lodash');
 const program = require('commander');
 const exec = require('child_process').exec;
+const colors = require('colors/safe');
 
 // Basic CLI setup
 program
@@ -72,7 +73,7 @@ if (program.args.length) {
         // Calculate and log the differences between the two files
         const differences = _.reduce(newJson, (result, line, index) => {
             if (oldJson.indexOf(line) === -1) {
-                console.log('    + %s | %i: %s', process.argv[2], index, line);
+                console.log(colors.green('    + ' + process.argv[2] + ' | ' + index + ': ' + line));
                 return result + 1;
             }
             return result;
