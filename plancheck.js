@@ -4,6 +4,13 @@ const _ = require('lodash');
 const program = require('commander');
 const exec = require('child_process').exec;
 
+// Basic CLI setup
+program
+    .version('1.0.0')
+    .usage('<plan>')
+    .parse(process.argv);
+
+// Custom functions
 const convertFileToArray = (file) => {
     return new Promise((resolve, reject) => {
         fs.readFile(file, (err, text) => {
@@ -20,27 +27,17 @@ const grabContainerDefinition = (type) => {
         fs.stat(__dirname + '/' + process.argv[2], err => {
             if (err) reject(err);
             else {
-                if (type === 'old') {
-                    exec("terraform show " + process.argv[2] + " |grep container_definitions |awk '{print $2}'", (err, stdout, stderr) => {
-                        if (err) reject(err);
-                        else resolve(JSON.parse(stdout.replace(/\\"/g,'"').slice(1, -1).slice(0, -1)));
-                    });
-                } else {
-                    exec("terraform show " + process.argv[2] + " |grep container_definitions |awk '{print $4}'", (err, stdout, stderr) => {
-                        if (err) reject(err);
-                        else resolve(JSON.parse(stdout.replace(/\\"/g,'"').slice(1, -1).slice(0, -1)));
-                    });
-                }
+                const print = ((type === 'old') ? '2' : '4')
+                exec("terraform show " + process.argv[2] + " |grep container_definitions |awk '{print $" + print + "}'", (err, stdout, stderr) => {
+                    if (err) reject(err);
+                    else resolve(JSON.parse(stdout.replace(/\\"/g,'"').slice(1, -1).slice(0, -1)));
+                });
             }
         });
     });
 }
 
-program
-    .version('1.0.0')
-    .usage('<plan>')
-    .parse(process.argv);
-
+// CLI logic
 if (program.args.length) {
     const script = async () => {
         // Get container definitions from the plan
