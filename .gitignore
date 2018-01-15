@@ -1,2 +1,5 @@
 .DS_Store
 .ds_store
+*.OLD
+tf-plan
+node_modules
