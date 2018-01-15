@@ -1,6 +1,8 @@
 # Terraform plan checker
 Simple tool that checks the generated Terraform plan for differences between the previous and new container definitions of an ECS service.
 
+> Currently only works for 1 specific ECS service
+
 # Why
 Troubleshooting a forced resource isn't always easy and can often be something very small... Also `TF_LOG=DEBUG` is chaotic and sucks to read.
 
