@@ -5,7 +5,7 @@ Simple tool that checks the generated Terraform plan for differences between the
 Troubleshooting a forced resource isn't always easy and can often be something very small... Also `TF_LOG=DEBUG` is chaotic and sucks to read.
 
 # Installation
-Clone the repo and: `npm install -g`
+Clone the repo and `npm install -g`
 
 # Usage
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
