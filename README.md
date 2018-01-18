@@ -1,5 +1,5 @@
 # Terraform plan checker
-Simple Node CLI tool that checks the generated Terraform plan for differences between the previous and new container definitions of an ECS service.
+Simple **Node.js** CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
 
 <p align="center">
 <img src="img/verified.png">
