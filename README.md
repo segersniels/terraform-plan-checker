@@ -13,7 +13,9 @@ Troubleshooting a forced resource isn't always easy and can often be something v
 - [Node.js](https://nodejs.org/en)
 
 ## Installation
-Clone the repo and `npm install -g`
+```bash
+git clone https://github.com/segersniels/terraform-plan-checker.git ; cd terraform-plan-checker ; npm install -g
+```
 
 ## Usage
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
