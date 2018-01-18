@@ -21,6 +21,7 @@ function go () {
         rm old.json new.json old new check 2>/dev/null
     else
         echo "ERR: Current tf-plan doesn't have any container_definitions to be changed"
+        rm check
     fi
 }
 
