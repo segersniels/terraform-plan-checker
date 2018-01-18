@@ -1,6 +1,10 @@
 # Terraform plan checker
 Simple Node CLI tool that checks the generated Terraform plan for differences between the previous and new container definitions of an ECS service.
 
+<p align="center">
+<img src="img/verified.png" width="200">
+</p>
+
 ## Why
 Troubleshooting a forced resource isn't always easy and can often be something very small... Also `TF_LOG=DEBUG` is chaotic and sucks to read.
 
@@ -13,3 +17,4 @@ Clone the repo and `npm install -g`
 
 ## Usage
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
+Ó
