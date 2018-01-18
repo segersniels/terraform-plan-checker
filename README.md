@@ -17,4 +17,3 @@ Clone the repo and `npm install -g`
 
 ## Usage
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
-Ó
