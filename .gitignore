@@ -3,3 +3,5 @@
 *.OLD
 tf-plan
 node_modules
+old.json
+new.json

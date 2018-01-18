@@ -1,4 +1,4 @@
-# Terraform plan checker
+edi# Terraform plan checker
 Simple tool that checks the generated Terraform plan for differences between the previous and new container definitions of an ECS service.
 
 > Currently only works for 1 specific ECS service

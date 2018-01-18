@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+PLAN=$1
+LOCATION=$(which plancheck)
+INDEX=$(echo $LOCATION |sed 's/bin\/plancheck/lib\/node\_modules\/plancheck\/index\.js/g')
+CHECK=$(terraform show $1 > check)
+
+if grep -q "container_definitions" "check"; then
+    # grab the definitions from the plan
+    node $INDEX --grab $PLAN
+
+    # generate human readable json
+    cat old.json |jq '.' > old
+    cat new.json |jq '.' > new
+
+    # calculate differences between both definitions
+    node $INDEX --calculate $PLAN
+
+    # clean up
+    rm old.json new.json old new check 2>/dev/null
+else
+    echo "ERR: Current tf-plan doesn't have any container_definitions to be changed"
+fi

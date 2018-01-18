@@ -17,11 +17,12 @@
   },
   "homepage": "https://github.com/smalltownheroes/terraform-plan-checker#readme",
   "bin": {
-    "plancheck": "plancheck.js"
+    "plancheck": "bin/plancheck"
   },
   "dependencies": {
     "colors": "^1.1.2",
     "commander": "^2.13.0",
-    "lodash": "^4.17.4"
+    "lodash": "^4.17.4",
+    "strip-ansi": "^4.0.0"
   }
 }
