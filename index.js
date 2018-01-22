@@ -27,8 +27,8 @@ const grabContainerDefinition = (type) => {
         fs.stat('./' + process.argv[3], err => {
             if (err) reject(err);
             else {
-                const print = ((type === 'old') ? '$2$3' : '$4$5');
-                exec(`terraform show ${process.argv[3]} |grep container_definitions |awk '{print ${print}}' |sed '/^\s*$/d' |sed 's/(forces//g'`, (err, stdout, stderr) => {
+                const print = ((type === 'old') ? '$2$3' : '$4$5$6');
+                exec(`terraform show ${process.argv[3]} |grep container_definitions |awk '{print ${print}}' |sed '/^\s*$/d' |sed 's/(forces//g' |sed 's/new//g' |sed 's/resource)//g' |sed`, (err, stdout, stderr) => {
                     const json = stripAnsi(stdout).replace(/=>/g,'')
                         .replace(/\]"/g,']')
                         .replace(/"\[/g,'[')
