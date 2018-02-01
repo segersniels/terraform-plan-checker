@@ -6,7 +6,7 @@ CHECK=$(terraform show "$1")
 
 # Functions
 function go () {
-  if [ $(grep -q "container_definitions" "$CHECK") ]; then
+  if [[ "$CHECK" == *"container_definitions"* ]]; then
         # grab the definitions from the plan
         node $INDEX --grab $PLAN
 
