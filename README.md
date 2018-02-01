@@ -24,6 +24,14 @@ npm install terraform-ecs-plan-checker -g
 ## Usage
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
 
+```
+- Grabbing the container definitions
+    √ Grabbing successful
+- Comparing the old container definitions with the new definitions
+    + tf-plan | 150:       "image": "000000000.dkr.ecr.eu-west-1.amazonaws.com/foo-bar:0.0.1-1"
+- Differences found:  1
+```
+
 ## Similar projects
 - https://github.com/coinbase/terraform-landscape  
 > A nice extensive tool that actualy compares the entire plan to it's previous state, not limiting it to ECS plans.  
