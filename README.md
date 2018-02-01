@@ -14,6 +14,8 @@ I needed a simple tool that let me check the container definitions real quick to
 - [jq](https://stedolan.github.io/jq)
 - [Node.js](https://nodejs.org/en)
 
+Will look into removing the `jq` dependency in the future. Couldn't manage to get a human readable json through Node.JS, blame my inexperience!
+
 ## Installation
 ```bash
 npm install terraform-ecs-plan-checker -g
