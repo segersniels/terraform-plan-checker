@@ -22,6 +22,6 @@ npm install terraform-ecs-plan-checker -g
 Using the checker tool is as easy as typing `plancheck <tf-plan>`.
 
 ## Similar projects
-- https://github.com/coinbase/terraform-landscape
-A nice extensive tool that actualy compares the entire plan to it's previous state, not limiting it to ECS plans.  
+- https://github.com/coinbase/terraform-landscape  
+> A nice extensive tool that actualy compares the entire plan to it's previous state, not limiting it to ECS plans.  
 The problem with landscape was that it didn't take line position into account when comparing `container_definitions` and thus showed me unneeded changes making it rather hard to see what I changed.
