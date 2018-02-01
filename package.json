@@ -24,5 +24,6 @@
     "commander": "^2.13.0",
     "lodash": "^4.17.4",
     "strip-ansi": "^4.0.0"
-  }
+  },
+  "devDependencies": {}
 }
