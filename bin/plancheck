@@ -2,11 +2,11 @@
 PLAN=$1
 LOCATION=$(which plancheck)
 INDEX=$(echo $LOCATION |sed 's/bin\/plancheck/lib\/node\_modules\/terraform-ecs-plan-checker\/index\.js/g')
-CHECK=$(terraform show $1 > check)
+CHECK=$(terraform show "$1")
 
 # Functions
 function go () {
-    if grep -q "container_definitions" "check"; then
+  if [ $(grep -q "container_definitions" "$CHECK") ]; then
         # grab the definitions from the plan
         node $INDEX --grab $PLAN
 
@@ -20,8 +20,7 @@ function go () {
         # clean up
         rm old.json new.json old new check 2>/dev/null
     else
-        echo "ERR: Current tf-plan doesn't have any container_definitions to be changed"
-        rm check
+        echo "ERR: Current tf-plan doesn't have any container_definition changes"
     fi
 }
 
