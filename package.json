@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smalltownheroes/terraform-ecs-plan-checker.git"
+    "url": "git+https://github.com/segersniels/terraform-ecs-plan-checker.git"
   },
   "author": "Niels Segers",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smalltownheroes/terraform-ecs-plan-checker/issues"
+    "url": "https://github.com/segersniels/terraform-ecs-plan-checker/issues"
   },
-  "homepage": "https://github.com/smalltownheroes/terraform-ecs-plan-checker#readme",
+  "homepage": "https://github.com/segersniels/terraform-ecs-plan-checker#readme",
   "bin": {
     "plancheck": "bin/plancheck"
   },
