@@ -14,7 +14,7 @@ Troubleshooting a forced resource isn't always easy and can often be something v
 
 ## Installation
 ```bash
-git clone https://github.com/segersniels/terraform-ecs-plan-checker.git ; cd terraform-ecs-plan-checker ; npm install -g
+npm install plancheck -g
 ```
 
 ## Usage
