@@ -1,4 +1,4 @@
-# Terraform plan checker
+# Terraform ECS plan checker
 Simple **Node.js** CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
 
 <p align="center">
@@ -14,7 +14,7 @@ Troubleshooting a forced resource isn't always easy and can often be something v
 
 ## Installation
 ```bash
-git clone https://github.com/segersniels/terraform-plan-checker.git ; cd terraform-plan-checker ; npm install -g
+git clone https://github.com/segersniels/terraform-ecs-plan-checker.git ; cd terraform-plan-checker ; npm install -g
 ```
 
 ## Usage
