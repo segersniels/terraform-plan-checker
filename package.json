@@ -1,8 +1,8 @@
 {
-  "name": "plancheck",
-  "version": "1.0.0",
+  "name": "terraform-ecs-plan-checker",
+  "version": "1.0.1",
   "description": "Simple command-line tool to check forced resource Terraform container definitions",
-  "main": "plancheck.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
