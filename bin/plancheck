@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 PLAN=$1
 LOCATION=$(which plancheck)
-INDEX=$(echo $LOCATION |sed 's/bin\/plancheck/lib\/node\_modules\/plancheck\/index\.js/g')
+INDEX=$(echo $LOCATION |sed 's/bin\/plancheck/lib\/node\_modules\/terraform-ecs-plan-checker\/index\.js/g')
 CHECK=$(terraform show $1 > check)
 
 # Functions
