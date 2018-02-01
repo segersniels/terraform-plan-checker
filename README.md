@@ -14,7 +14,7 @@ Troubleshooting a forced resource isn't always easy and can often be something v
 
 ## Installation
 ```bash
-npm install plancheck -g
+npm install terraform-ecs-plan-checker -g
 ```
 
 ## Usage
