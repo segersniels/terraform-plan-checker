@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const program = require('commander');
 const data = require('./lib/data.js');
 const package = require('./package.json');
