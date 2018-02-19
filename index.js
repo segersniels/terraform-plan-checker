@@ -5,12 +5,12 @@ const package = require('./package.json');
 
 program
     .version(package.version)
+    .option('-c, --clean', 'only output the lines that are different')
     .parse(process.argv);
 
 if (program.args.length > 0) {
     script = async () => {
-        console.log('- Grabbing the container definitions');
-        data.grabDefinitions()
+        data.grabDefinitions(program.clean)
             .then(data.prepareForAction)
             .then(data.calculateDifferences);
     }
