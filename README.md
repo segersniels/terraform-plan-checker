@@ -22,13 +22,24 @@ Using the checker tool is as easy as typing `plancheck <tf-plan>`.
 - Grabbing the container definitions
     √ Grabbing successful
 - Comparing the old container definitions with the new definitions
-    + tf-plan | 150:       "image": "000000000.dkr.ecr.eu-west-1.amazonaws.com/foo-bar:0.0.1-1"
-- Differences found:  1
+   Lines that were changed or added:
+    tf-plan | (foo-bar)  "image": "000000000.dkr.ecr.eu-west-1.amazonaws.com/foo-bar:0.0.1-1"
+   Lines that were deleted:
+    tf-plan | (foo-bar)  "name": "FOO_BAR"
 ```
 
-It is also possible to pass the `--clean` flag to `plancheck` to output a JSON file which enables you to process the output further.
+It is also possible to pass the `--clean` flag to `plancheck` to output a JSON file which enables you to process the output further. The JSON only consists out of changed and new lines, not taking the deleted lines into account to keep it as basic as possible.
 
 *(eg. implementing a check to see if new image versions are available in ECR before applying the plan).*
+
+```json
+[
+    {
+        "key": "image",
+        "value": "000000000.dkr.ecr.eu-west-1.amazonaws.com/foo-bar:0.0.1-1"
+    }
+]
+```
 
 ```bash
 #!/usr/bin/env bash
