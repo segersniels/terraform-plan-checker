@@ -25,7 +25,8 @@ Using the checker tool is as easy as typing `plancheck <tf-plan>`.
    Lines that were changed or added:
     tf-plan | (foo-bar)  "image": "000000000.dkr.ecr.eu-west-1.amazonaws.com/foo-bar:0.0.1-1"
    Lines that were deleted:
-    tf-plan | (foo-bar)  "name": "FOO_BAR"
+    tf-plan | (foo-bar)  "name": "FOO"
+    tf-plan | (foo-bar)  "value": "BAR"
 ```
 
 It is also possible to pass the `--clean` flag to `plancheck` to output a JSON file which enables you to process the output further. The JSON only consists out of changed and new lines, not taking the deleted lines into account to keep it as basic as possible.
