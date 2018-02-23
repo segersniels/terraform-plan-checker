@@ -12,7 +12,7 @@ if (program.args.length > 0) {
     script = async () => {
         data.grabDefinitions(program.clean)
             .then(data.prepareForAction)
-            .then(data.calculateDifferences);
+            .then(data.processDefinitions);
     }
     script().catch(err => {
         console.error(err);
