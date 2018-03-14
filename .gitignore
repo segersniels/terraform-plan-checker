@@ -1,7 +1,7 @@
 .DS_Store
 .ds_store
 *.OLD
-tf-plan
+tf-plan*
 node_modules
 old.json
 new.json
