@@ -9,14 +9,11 @@ program
     .parse(process.argv);
 
 if (program.args.length > 0) {
-    script = async () => {
-        data.grabDefinitions(program.clean)
-            .then(data.prepareForAction)
-            .then(data.processDefinitions);
-    }
-    script().catch(err => {
-        console.error(err);
-    });
+    const file = process.argv[2];
+    data.grabDefinitions(file, program.clean)
+        .then(data.prepareForAction)
+        .then(data.processDefinitions)
+        .catch(err => console.error(err));
 } else {
     program.help();
 }
