@@ -46,18 +46,35 @@ It is also possible to pass the `--clean` flag to `plancheck` to output a JSON f
 #!/usr/bin/env bash
 IMAGES=($(plancheck tf-plan --clean |jq -r '.[] | select(.key == "image") | .value'))
 
+function prompt () {
+  sleep 1
+  while true; do
+    read -p " Continuing is not suggested, do you want to continue? [y/n] " yn
+    case $yn in
+      [Nn]* ) exit 1; break;;
+      [Yy]* ) exit;;
+      * ) echo "Please answer yes or no.";;
+    esac
+  done
+}
+
 for image in "${IMAGES[@]}"
 do
   service=${image##*/}
   name=${service%%:*}
   version=${service##*:}
-  ecr=$(aws ecr list-images --repository-name $name)
+  ecr=$(aws ecr list-images --repository-name $name 2>/dev/null)
 
-  if [[ $ecr == *"$version"* ]]; then
-    echo "SUCCESS: version: '$version' exists in ECR repository '$name'"
+  if [ -z "$ecr" ]; then
+    echo "ERR: Repository '$name' not found"
+    prompt
   else
-    echo "ERR: version: '$version' is not in ECR repository '$name'"
-    exit 1
+    if [[ $ecr == *"$version"* ]]; then
+      echo "SUCCESS: version: '$version' exists in ECR repository '$name'"
+    else
+      echo "ERR: version: '$version' is not in ECR repository '$name'"
+      exit 1
+    fi
   fi
 done
 ```
