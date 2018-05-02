@@ -29,6 +29,8 @@ Using the checker tool is as easy as typing `plancheck <tf-plan>`.
     tf-plan | (foo-bar)  "value": "BAR"
 ```
 
+Or pipe your plan directly to `terraform plan |plancheck`.
+
 It is also possible to pass the `--clean` flag to `plancheck` to output a JSON file which enables you to process the output further. The JSON only consists out of changed and new lines, not taking the deleted lines into account to keep it as basic as possible.
 
 *(eg. implementing a check to see if new image versions are available in ECR before applying the plan).*
