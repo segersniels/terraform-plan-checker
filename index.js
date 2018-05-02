@@ -19,7 +19,7 @@ program.version(package.version)
 const exec = (input, clean) => {
     if (typeof clean === 'undefined' || !clean) console.log('- Grabbing the container definitions');
     if (input.length === 0) { // when stdin has no container definitions
-        console.error(colors.red("    × No container definitions found in plan"));
+        if (typeof clean === 'undefined' || !clean) console.error(colors.red("    × No container definitions found in plan"));
         process.exit();
     }
     data.grabDefinitions(input, clean)
@@ -42,7 +42,7 @@ if (!process.stdin.isTTY) {
         exec(_.compact(input).join("\n"), program.clean);
     });
 } else {
-    if (program.args.length === 0 || !fs.existsSync(program.args[0])) {
+    if (program.args.length === 0 ||  !fs.existsSync(program.args[0])) {
         console.error(colors.red("ERR: no file specified or doesn't exist"));
         process.exit();
     }
