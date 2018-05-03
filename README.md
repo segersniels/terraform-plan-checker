@@ -1,4 +1,5 @@
 # Terraform ECS plan checker
+[![npm](https://img.shields.io/npm/dm/terraform-ecs-plan-checker.svg)](https://www.npmjs.com/package/terraform-ecs-plan-checker)
 [![changelog](https://img.shields.io/badge/changelog--lightgrey.svg)](CHANGELOG.md)
 
 Simple **Node.js** CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
