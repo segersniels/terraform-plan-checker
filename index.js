@@ -22,10 +22,11 @@ const exec = (input, clean) => {
         if (typeof clean === 'undefined' || !clean) console.error(colors.red("    × No container definitions found in plan"));
         process.exit();
     }
-    data.grabDefinitions(input, clean)
+    data.initDefinitions(input, clean)
         .then(data.prepareForAction)
         .then(data.processDefinitions)
         .catch(err => console.error(colors.red('    × Grabbing unsuccessful')));
+        //.catch(err => console.error(err));
 }
 
 if (!process.stdin.isTTY) {
