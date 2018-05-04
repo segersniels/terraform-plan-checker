@@ -1,3 +1,15 @@
+1.3.4-rc.1 / 2018-05-04
+=======================
+
+  * version bump
+  * command always outputting as change ; temp disabling
+  * readme change
+  * changelog first
+  * add monthly download badge
+  * add changelog badge
+  * add Makefile to publish autoadjusting changelog
+  * add changelog
+
 1.3.4 / 2018-05-03
 ==================
 
