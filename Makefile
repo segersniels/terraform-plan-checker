@@ -4,6 +4,7 @@ changelog:
 	@echo "==============================================="
 	@changelog all -m > CHANGELOG.md
 
-publish:
+npm:
 	npm publish
-	make changelog
+
+publish: npm changelog

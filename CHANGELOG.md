@@ -1,3 +1,10 @@
+1.3.4-rc.2 / 2018-05-04
+=======================
+
+  * bump version
+  * handle toplevel changes differently from env variables
+  * update changelog
+
 1.3.4-rc.1 / 2018-05-04
 =======================
 
