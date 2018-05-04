@@ -2,7 +2,7 @@
 [![changelog](https://img.shields.io/badge/changelog--lightgrey.svg)](CHANGELOG.md)
 [![npm](https://img.shields.io/npm/dm/terraform-ecs-plan-checker.svg)](https://www.npmjs.com/package/terraform-ecs-plan-checker)
 
-Simple **Node.js** CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
+Simple CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
 
 <p align="center">
 <img src="img/verified.svg" width="250">
@@ -11,7 +11,7 @@ Simple **Node.js** CLI tool that checks the generated **Terraform plan** for dif
 ## Why
 Troubleshooting a forced resource on a container definition isn't always easy and can often be something very small... Also `TF_LOG=DEBUG` is chaotic and I hate reading through it.  
 
-I needed a simple tool that let me check the container definitions real quick to have a safe check before applying.
+I needed a simple tool that let me check the container definitions real quick to have a safe check before applying. It might not be perfect but it gets the job done.
 
 ## Installation
 ```bash
@@ -86,5 +86,4 @@ done
 
 ## Similar projects
 - https://github.com/coinbase/terraform-landscape  
-> A nice extensive tool that actualy compares the entire plan to it's previous state, not limiting it to ECS plans.  
-The problem with landscape was that it didn't take line position into account when comparing `container_definitions` and thus showed me unneeded changes making it rather hard to see what I changed.
+> A nice extensive tool that actualy compares the entire plan to it's previous state, not limiting it to ECS plans. The problem with landscape is that it doesn't take line position into account when comparing `container_definitions` and thus showing unneeded changes making it rather hard to see what was changed.
