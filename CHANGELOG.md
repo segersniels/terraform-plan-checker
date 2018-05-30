@@ -211,4 +211,3 @@
   * adjusted readme
   * removed json-diff dependency and wrote own comparison tool
   * added tf-plan file usage
-  * init
