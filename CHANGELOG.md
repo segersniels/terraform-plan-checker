@@ -1,3 +1,15 @@
+
+1.3.5-rc.2 / 2018-05-22
+=======================
+
+  * dont push empty lines object into deletes or changes
+
+1.3.5 / 2018-05-22
+==================
+
+  * dont push empty lines object into deletes or changes
+  * update changelog
+
 1.3.4-rc.2 / 2018-05-04
 =======================
 
