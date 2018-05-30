@@ -1,3 +1,7 @@
+1.3.6-rc.1 / 2018-05-30
+=======================
+
+  * add more top level changes like command and links
 
 1.3.5-rc.2 / 2018-05-22
 =======================
@@ -210,4 +214,3 @@
   * adjusted some code and throwing error when given plan doesnt exist
   * adjusted readme
   * removed json-diff dependency and wrote own comparison tool
-  * added tf-plan file usage
