@@ -6,7 +6,7 @@ const _ = require("lodash");
 const fs = require("fs");
 
 const data = require("./lib/data.js");
-const util = require("./lib/util.js");
+const { grep } = require("./lib/util");
 
 let file;
 const stdin = process.stdin;
@@ -31,15 +31,14 @@ const exec = (input, clean) => {
     data.initDefinitions(input, clean)
         .then(data.prepareForAction)
         .then(data.processDefinitions)
-        // .catch(err => console.error(colors.red("    × Grabbing unsuccessful")));
-        .catch(err => console.error(err));
+        .catch(err => console.error(colors.red("    × Grabbing unsuccessful")));
 };
 
 if (!process.stdin.isTTY) {
     stdin.resume();
     stdin.setEncoding("utf8");
     stdin.on("data", content => {
-        input.push(util.grep(content, "container_definitions:"));
+        input.push(grep(content, "container_definitions:"));
     });
     stdin.on("end", () => {
         if (program.args.length !== 0) {
