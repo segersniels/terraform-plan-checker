@@ -1,12 +1,10 @@
 # Terraform ECS plan checker
-[![changelog](https://img.shields.io/badge/changelog--lightgrey.svg)](CHANGELOG.md)
 [![npm](https://img.shields.io/npm/dm/terraform-ecs-plan-checker.svg)](https://www.npmjs.com/package/terraform-ecs-plan-checker)
 
 Simple CLI tool that checks the generated **Terraform plan** for differences between the previous and new **container definitions** of an **ECS service**.
 
 <p align="center">
 <img src="img/verified.svg" width="250">
-</p>
 
 ## Why
 Troubleshooting a forced resource on a container definition isn't always easy and can often be something very small... Also `TF_LOG=DEBUG` is chaotic and I hate reading through it.  
