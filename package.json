@@ -1,6 +1,6 @@
 {
     "name": "terraform-ecs-plan-checker",
-    "version": "1.3.7-rc.1",
+    "version": "1.3.7-rc.2",
     "description": "Simple command-line tool to check forced resource Terraform container definitions",
     "main": "index.js",
     "scripts": {

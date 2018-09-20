@@ -32,6 +32,7 @@ const exec = (input, clean) => {
         .then(data.prepareForAction)
         .then(data.processDefinitions)
         .catch(err => console.error(colors.red("    × Grabbing unsuccessful")));
+    // .catch(err => console.error(err));
 };
 
 if (!process.stdin.isTTY) {
